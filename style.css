@@ -34,19 +34,6 @@ body {
   align-items: center;
 }
 
-
-.menus b:hover{
-  color: #ff5d1d;
-}
-
-.login b:hover{
-  color: #ff5d1d;
-}
-
-.icons i:hover{
-  color: #ff5d1d;
-}
-
 .menus {
   width: 30%;
   height: 100%;
@@ -85,6 +72,18 @@ body {
 
 .icons i {
   font-size: 21px;
+}
+
+.menus b:hover {
+  color: #ff5d1d;
+}
+
+.login b:hover {
+  color: #ff5d1d;
+}
+
+.icons i:hover {
+  color: #ff5d1d;
 }
 
 .wholehome {
@@ -134,10 +133,6 @@ body {
   gap: 35px;
   font-weight: 700;
   font-size: 14px;
-  /* border-width: 0.8px;
-  border-color: #f7f7f7;
-  border-style: solid;
-  font-size: 14px; */
 }
 
 .locaimg:hover {
@@ -165,6 +160,21 @@ body {
   /* background-color: aqua; */
 }
 
+.overlay1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 96%;
+  height: 77%;
+  background-color: rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.decoimgs:hover .overlay1 {
+  opacity: 1;
+}
+
 .sec1 {
   display: flex;
   flex-direction: column;
@@ -172,63 +182,21 @@ body {
   gap: 10px;
 }
 
-
 .sec1 strong {
   font-size: 36px;
   font-weight: 700;
 }
 
 .sec1 p {
-  color: #9ca09e;
+  color: #99a5c1;
   font-size: 13px;
 }
 
 .sec2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 20px;
   margin-top: 30px;
-}
-
-.arrimag {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  position: relative;
-}
-
-.hovicon i {
-  font-size: 17px;
-  background-color: white;
-  padding: 13px 13px;
-}
-
-.hovicon {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  position: absolute;
-  right: -40%;
-  padding: 20px 18px;
-}
-
-.arrimag:hover .hovicon {
-  right: 2px;
-  transition: 0.5s linear;
-}
-
-.iconcolor:hover {
-  background-color: #ff5d1d;
-  color: white;
-}
-
-.arrimag p {
-  color: #9ca09e;
-  font-size: 15px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .toppop {
@@ -262,15 +230,14 @@ body {
 .subpopu {
   width: 90%;
   height: 100%;
-  background-color: aqua;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* background-color: aqua; */
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
   position: relative;
 }
 
 .popular1 {
-  width: 50%;
+  width: 100%;
   height: 100%;
   background-color: #f7f7f7;
   display: flex;
@@ -281,9 +248,9 @@ body {
 }
 
 .popular2 {
-  width: 50%;
+  width: 100%;
   height: 100%;
-  background-color: blue;
+  /* background-color: blue; */
 }
 
 .chaimg {
@@ -300,6 +267,19 @@ body {
   margin-top: 15px;
   outline: none;
   border: none;
+}
+.overlay2 {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 96%;
+  height: 77%;
+  background-color: rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transition: 0.2s;
+}
+.decoimgs:hover .overlay2 {
+  opacity: 1;
 }
 
 .cartbutton:hover {
@@ -418,32 +398,47 @@ body {
 
 .subpart1 {
   width: 90%;
-  height: 89%;
+  height: 100%;
   /* background-color: green; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
-
 .decoimgs {
-  display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
   position: relative;
+  /* display: flex; */
+  display: inline-block;
 }
 
-.decoimgs p {
-  font-size: 15px;
-  color: #9ca09e;
+.decoimgs img {
+  display: inline;
+  max-width: 100%;
+  height: auto;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 96%;
+  height: 77%;
+  background-color: rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.decoimgs:hover .overlay {
+  opacity: 1;
 }
 
 .hoveicon {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   position: absolute;
   right: -40%;
-  padding: 20px 18px;
+  padding: 15px 8px;
 }
 
 .hoveicon i {
@@ -453,7 +448,7 @@ body {
 }
 
 .decoimgs:hover .hoveicon {
-  right: 2px;
+  right: 1px;
   transition: 0.5s linear;
 }
 
@@ -462,6 +457,22 @@ body {
   color: white;
 }
 
+.sub p {
+  font-size: 15px;
+  color: rgb(57, 52, 52);
+}
+
+.sub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.sub p:hover {
+  color: #ff5d1d;
+}
 .decorpart2 {
   width: 100%;
   height: 70%;
@@ -473,48 +484,10 @@ body {
 
 .subpart2 {
   width: 90%;
-  height: 89%;
+  height: 100%;
   /* background-color: green; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-}
-
-.decoimgs {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  position: relative;
-}
-
-.decoimgs p {
-  font-size: 15px;
-  color: #9ca09e;
-}
-
-.hoveicon {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  position: absolute;
-  right: -40%;
-  padding: 20px 18px;
-}
-
-.hoveicon i {
-  font-size: 17px;
-  background-color: white;
-  padding: 13px 13px;
-}
-
-.decoimgs:hover .hoveicon {
-  right: 2px;
-  transition: 0.5s linear;
-}
-
-.icocolor:hover {
-  background-color: #ff5d1d;
-  color: white;
 }
 
 .wbomdes {
@@ -587,7 +560,8 @@ body {
   flex-direction: column;
   align-items: end;
   justify-content: center;
-  position: sticky;
+  /* position: sticky; */
+  background-attachment: fixed;
 }
 
 .customerdet {
@@ -673,8 +647,8 @@ body {
   margin-top: 80px;
 }
 .iconshop img {
-  width: 15%;
-  height: 15%;
+  width: 13%;
+  height: 13%;
 }
 
 .iconshop h6 {
@@ -710,32 +684,36 @@ body {
   display: flex;
   flex-direction: row;
   display: grid;
-  line-height:30px;
-  grid-template-columns:250px 250px 250px 900px;
+  line-height: 30px;
+  grid-template-columns: 250px 250px 250px 900px;
 }
 
-.secfoot h3{  
-   font-size: 14px;
-   font-weight: 700;
+.secfoot h3 {
+  font-size: 14px;
+  font-weight: 700;
 }
 
-.secfoot p{
+.secfoot p {
   font-size: 13px;
   font-weight: 400px;
   color: rgb(57, 52, 52);
 }
 
-.secfoot p:hover{
+.secfoot p:hover {
   color: #ff5d1d;
 }
 
-.secfoot input{
+.secfoot .ptag:hover {
+  color: rgb(57, 52, 52);
+}
+
+.secfoot input {
   width: 55%;
   height: 18%;
   margin-top: 20px;
 }
 
-.secfoot button{
+.secfoot button {
   width: 15%;
   height: 19%;
   font-size: 14px;
@@ -745,32 +723,28 @@ body {
   border: none;
 }
 
-
-
-.secfoot button:hover{
+.secfoot button:hover {
   background-color: #ff5d1d;
 }
 
-.menuicon{
+.menuicon {
   margin-top: 50px;
-
 }
 
-.menuicon i{
+.menuicon i {
   width: 100%;
   height: 100%;
- padding: 15px 15px;
+  padding: 15px 15px;
   background-color: #f7f7f7;
   font-size: 20px;
-  
 }
 
-.menuicon i:hover{
+.menuicon i:hover {
   background-color: #ff5d1d;
   color: white;
 }
 
-.com{
+.com {
   width: 100%;
   height: 9%;
   /* background-color: yellow; */
@@ -779,15 +753,136 @@ body {
   align-items: center;
 }
 
-.com p{
+.com p {
   font-size: 13px;
-  color:rgb(57, 52, 52);
+  color: rgb(57, 52, 52);
 }
 
-.com span{
+.com span {
   color: #ff5d1d;
 }
 
-@media(max-width:1200px){
-   
+@media (max-width: 1200px) {
+  .wholenav {
+    display: none;
+  }
+  .wholehome {
+    width: 100%;
+    height: 50%;
+    margin: 0;
+  }
+  .subhome {
+    width: 100%;
+  }
+  .wholeloca {
+    width: 100%;
+    height: 70%;
+  }
+  .subloca {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .wholearrival {
+    width: 100%;
+    height: 100%;
+  }
+  .subarrival {
+    width: 100%;
+    height: 100%;
+  }
+  .sec1 {
+    margin-top: 50px;
+  }
+  .sec2 {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+  }
+  .decoimgs {
+    justify-content: center;
+    align-items: center;
+  }
+  .toppop{
+    width: 100%;
+    height: 20%;
+  }
+  .wholepopu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .subpopu {
+    width: 80%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cartbutton{
+    margin-bottom: 30px;
+  }
+  .wholesell{
+    height: 25%;
+  }
+  .subpart1{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .subpart2{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .decorpart1{
+    width: 100%;
+    height: 90%;
+  }
+  .decorpart2{
+    width: 100%;
+    height: 90%;
+  }
+  .overlay{
+    width: 90%;
+    height: 67%;
+  }
+ .new{
+  display: none;
+ }
+ .overlay1{
+  width: 80%;
+  height: 80%;
+  left: 20px;
+  top: 20px;
+ }
+ .overlay2{
+  width: 80%;
+  height: 70%;
+  top: 30px;
+  left: 30px;
+ }
+ .wbomdes{
+  width: 100%;
+  height: 30%;
+  margin-bottom: 20px;
+ }
+ .sbomdes{
+  width: 100%;
+  height: 100%;
+ }
+ .overlay{
+  width: 90%;
+  height: 75%;
+ }
+ .sublistmenu{
+  grid-template-columns: repeat(3,1fr);
+ }
+ .bgimag{
+  width: 100%;
+  height: 60%;
+  background-attachment: fixed;
+  
+ }
+ .customerdet{
+  width: 50%;
+  height: 40%;
+ }
+
 }
