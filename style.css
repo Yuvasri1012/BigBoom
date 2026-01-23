@@ -1102,13 +1102,11 @@ body {
   .addsec button{
     width: 20%;
   }
-  .addsec{
-    margin-bottom: 20px;
-  }
   .menuicon{
     width: 5%;
     height: 10%;
     gap: 10px;
+    margin-top: 20px;
   }
   .com{
     height: 10%;
