@@ -232,7 +232,7 @@ body {
   height: 100%;
   /* background-color: aqua; */
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   position: relative;
 }
 
@@ -802,7 +802,7 @@ body {
     justify-content: center;
     align-items: center;
   }
-  .toppop{
+  .toppop {
     width: 100%;
     height: 20%;
   }
@@ -819,93 +819,299 @@ body {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
-  .cartbutton{
+  .cartbutton {
     margin-bottom: 30px;
   }
-  .wholesell{
+  .wholesell {
     height: 25%;
   }
-  .subpart1{
-    grid-template-columns: repeat(2,1fr);
+  .subpart1 {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .subpart2{
-    grid-template-columns: repeat(2,1fr);
+  .subpart2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .decorpart1 {
+    width: 100%;
+    height: 90%;
+  }
+  .decorpart2 {
+    width: 100%;
+    height: 90%;
+  }
+  .overlay {
+    width: 90%;
+    height: 67%;
+  }
+  .new {
+    display: none;
+  }
+  .overlay1 {
+    width: 80%;
+    height: 80%;
+    left: 20px;
+    top: 20px;
+  }
+  .overlay2 {
+    width: 80%;
+    height: 70%;
+    top: 30px;
+    left: 30px;
+  }
+  .wbomdes {
+    width: 100%;
+    height: 30%;
+    margin-bottom: 20px;
+  }
+  .sbomdes {
+    width: 100%;
+    height: 100%;
+  }
+  .overlay {
+    width: 90%;
+    height: 75%;
+  }
+  .sublistmenu {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .bgimag {
+    width: 100%;
+    height: 50%;
+    margin-left: 6px;
+  }
+  .customerdet {
+    width: 50%;
+    height: 90%;
+    margin-right: 45px;
+  }
+  .subicon {
+    width: 90%;
+    height: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .iconshop {
+    width: 100%;
+    height: 100%;
+  }
+  .menuicon {
+    height: 10%;
+    width: 10%;
+    display: flex;
+    gap: 20px;
+  }
+  .wholefoot {
+    height: 30%;
+    margin-bottom: 300px;
+  }
+  .addsec {
+    grid-column: span 3;
+    margin-top: 60px;
+    margin-left: 4px;
+  }
+  .secfoot input {
+    width: 80%;
+  }
+  .secfoot .button {
+    width: 100%;
+  }
+  .com {
+    height: 5%;
+  }
+}
+
+@media (max-width: 600px) {
+  .wholehome {
+    width: 100%;
+    height: 30%;
+    margin: 0;
+  }
+  .subhome {
+    width: 100%;
+    height: 100%;
+  }
+  .wholeloca {
+    width: 100%;
+    height: 65%;
+  }
+  .subloca {
+    width: 90%;
+    height: 90%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .wholearrival {
+    width: 100%;
+    height: 100%;
+  }
+  .subarrival {
+    width: 100%;
+    height: 100%;
+  }
+  .sec1 {
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    gap: 25px;
+  }
+  .sec1 p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .sec1 strong {
+    font-size: 24px;
+  }
+  .sec2 {
+    width: 57%;
+    height: 60%;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 0px;
+    margin-left: 100px;
+  }
+  .newdeco {
+    display: none;
+  }
+  .overlay1 {
+    width: 85%;
+    height: 70%;
+  }
+  .toppop b {
+    font-size: 24px;
+  }
+  .toppop p {
+    font-size: 14px;
+    text-align: center;
+    line-height: 25px;
+  }
+  .subpopu {
+    width: 90%;
+  }
+  .sub {
+    margin-top: 25px;
+  }
+  .seller b {
+    font-size: 25px;
+  }
+  .seller p {
+    font-size: 14px;
+    text-align: center;
+    line-height: 25px;
+  }
+  .addeco {
+    display: none;
+  }
+  .subpart1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .subpart2 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .button{
+    margin-top: 20px;
   }
   .decorpart1{
-    width: 100%;
+   margin-top: 50px;
+   width: 100%;
+   height: 60%;
+   margin-left: 10px;
+   
+  }
+  .subpart1{
+    width: 80%;
     height: 90%;
   }
   .decorpart2{
     width: 100%;
-    height: 90%;
+    height: 60%;
   }
-  .overlay{
-    width: 90%;
-    height: 67%;
-  }
- .new{
-  display: none;
- }
- .overlay1{
+.subpart2{
   width: 80%;
-  height: 80%;
-  left: 20px;
-  top: 20px;
- }
- .overlay2{
-  width: 80%;
-  height: 70%;
-  top: 30px;
-  left: 30px;
- }
- .wbomdes{
-  width: 100%;
-  height: 30%;
-  margin-bottom: 20px;
- }
- .sbomdes{
-  width: 100%;
-  height: 100%;
- }
- .overlay{
-  width: 90%;
-  height: 75%;
- }
- .sublistmenu{
-  grid-template-columns: repeat(3,1fr);
- }
- .bgimag{
-  width: 100%;
-  height: 50%;
-  margin-left: 6px;
- }
- .customerdet{
-  width: 50%;
   height: 90%;
-  margin-right: 45px;
- }
- .subicon{
-  width: 90%;
-  height: 100%;
-  grid-template-columns: repeat(2,1fr);
- }
- .iconshop{
-  width: 100%;
-  height: 100%;
- }
- hr{
-  display: none;
- }
- .subfoot{
-  grid-template-columns:repeat(3,1fr)
- }
-.subfoot:last-child{
- 
 }
- .menuicon{
-  height: 10%;
-  display:flex;
-  gap: 15px;
- }
-
+  .overlay{
+    width: 95%;
+    height: 79%;
+  }
+  .wbomdes{
+    width: 95%;
+    height: 15%;
+  }
+  .sbomdes{
+    width: 90%;
+    height: 100%;
+  }
+  .wholelistmenu{
+    width: 100%;
+    height: 30%;
+  }
+  .sublistmenu{
+    width: 100%;
+    height: 100%;
+  }
+  .addmenu1{
+    display: none;
+  }
+  .customerdet{
+    width: 81%;
+    height: 80%;
+    margin-right: 15px;
+  }
+  .cus h4{
+    margin-top: 10px;
+  }
+  .subdet{
+    gap: 5px;
+  }
+  .bgimag{
+    width: 100%;
+    height: 55%;
+  }
+  .wholeicon{
+    width: 100%;
+    height: 100%;
+  }
+  .subicon{
+    grid-template-columns: repeat(1,1fr);
+    line-height: 15px;
+  }
+  .iconshop img{
+    width: 50px;
+    height: 50px;
+  }
+  .wholefoot{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+  }
+  .subfoot{
+    height:95%;
+  }
+  .secfoot{
+    grid-column: 1/3;
+  }
+  .addsec{
+    margin-top: 10px;
+    gap: 10px;
+  }
+  .addsec p{   
+    width:80%;
+     font-size: 16px;
+    text-align:justify;
+  }
+  .addsec input{
+    width: 58%;
+  }
+  .addsec button{
+    width: 20%;
+  }
+  .addsec{
+    margin-bottom: 20px;
+  }
+  .menuicon{
+    width: 5%;
+    height: 10%;
+    gap: 10px;
+  }
+  .com{
+    height: 10%;
+    text-align: center;
+  }
 }
