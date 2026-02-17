@@ -1431,6 +1431,17 @@ body {
   .com {
     height: 5%;
   }
+  .sublogin {
+    width: 70%;
+    height: 50%;
+  }
+  .subsign {
+    width: 70%;
+    height: 50%;
+  }
+  .wholeeasyicon {
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1628,5 +1639,53 @@ body {
   .com {
     height: 10%;
     text-align: center;
+  }
+  .sublogin {
+    width: 70%;
+    height: 40%;
+  }
+  .loginstyle img {
+    width: 80%;
+    height: 50%;
+  }
+  .wholelogin {
+    margin-right: 100px;
+    margin-bottom: 200px;
+  }
+  .loginstyle h2 {
+    font-size: 25px;
+  }
+  .loginstyle input {
+    padding: 10px 20px;
+  }
+  .loginstyle p {
+    font-size: 8px;
+  }
+  .loginstyle button {
+    padding: 10px 80px;
+  }
+  .subsign {
+    width: 70%;
+    height: 40%;
+  }
+  .loginstyle1 img {
+    width: 80%;
+    height: 50%;
+  }
+  .wholesign {
+    margin-right: 100px;
+    margin-bottom: 200px;
+  }
+  .loginstyle1 h2 {
+    font-size: 20px;
+  }
+  .loginstyle1 input {
+    padding: 10px 20px;
+  }
+  .loginstyle1 p {
+    font-size: 8px;
+  }
+  .loginstyle1 button {
+    padding: 10px 75px;
   }
 }
