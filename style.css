@@ -572,14 +572,21 @@ body {
   z-index: 30;
   top: -100%;
   overflow-y: scroll;
+  display: none;
+}
+
+.cartoverlay.show1 {
+  display: block;
 }
 
 .show1 {
   z-index: 100;
   top: 0;
 }
+
 .subcartoverlay {
   position: fixed;
+  top: 0;
   right: 0;
   width: 400px;
   height: 100vh;
@@ -593,6 +600,7 @@ body {
 .wholeshop {
   padding: 25px;
   border-bottom: 1px solid #ddd;
+  flex-shrink: 0;
 }
 
 .shopcart {
@@ -630,10 +638,26 @@ body {
 
 .selectcart {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 15px 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 15px;
   border-bottom: 1px solid #eee;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}
+
+.cartimg {
+  display: flex;
+  width: 100%;
+  height: 110px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px;
+  margin: 0;
+  border-bottom: 1px solid #ddd;
 }
 
 /* Product Image */
@@ -641,22 +665,35 @@ body {
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 6px;
+  flex-shrink: 0;
 }
 
 /* Details */
 .cartdetails {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
 }
 
 .cartname {
-  font-weight: 600;
   font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cartname:hover {
+  color: #ff5d1d;
 }
 
 .cartprice {
+  font-size: 16px;
   font-weight: bold;
-  margin-top: 4px;
+  margin: 5px 0;
 }
 
 /* Quantity Box */
@@ -688,30 +725,41 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-weight: bold;
+  padding: 5px;
 }
 
 /* Delete Button */
 .deletebutton {
   margin-left: auto;
+  flex-shrink: 0;
 }
 
 .deleteicon {
-  border: none;
-  background: transparent;
-  color: #e74c3c;
-  font-size: 18px;
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #ccc;
+  background: white;
   cursor: pointer;
+
+  flex-shrink: 0;
 }
 
 .deleteicon:hover {
-  color: #c0392b;
+  color: #ff5d1d;
+  border: 1px solid #ff5d1d;
 }
 
 /* TOTAL SECTION */
 .wholetotal {
-  padding: 25px;
+  flex-shrink: 0;
   border-top: 1px solid #ddd;
-  background: #fafafa;
+  padding: 20px;
+  background: white;
 }
 
 .subtotal {
@@ -740,16 +788,22 @@ body {
 .checkoutbtn {
   flex: 1;
   padding: 10px;
-  border: none;
-  background: #111;
-  color: white;
+  border: 1px solid #333;
+  background: white;
+  color: black;
   border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
 }
 
 .checkoutbtn:hover {
-  background: #000;
+  background: black;
+  color: white;
+}
+
+.viewbtn:hover {
+  background-color: black;
+  color: white;
 }
 
 .wholeeasyicon {
