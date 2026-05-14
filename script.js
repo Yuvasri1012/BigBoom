@@ -71,3 +71,7 @@ document.querySelector(".subsbtn1").addEventListener("click", (e) => {
       alert(error.message);
     });
 });
+
+document.querySelector(".popupClose").onclick = function () {
+    document.querySelector(".popupSign").style.display = "none";
+  };

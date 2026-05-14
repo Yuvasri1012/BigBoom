@@ -13,23 +13,20 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
-      integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <title>BigBoom</title>
   </head>
   <body>
+    <!-- ===== LOGIN POPUP ===== -->
     <div class="popupSign">
       <div class="wholelogin">
         <form action="" class="sublogin">
           <section class="loginstyle">
-            <img src="./assest/Login Page.jpg" alt="" />
+            <span class="popupClose">&times;</span>
+            <div class="imgWrapper">
+              <img src="./assest/Login Page.jpg" alt="Login" />
+            </div>
             <h2>LOGIN NEWSLETTER</h2>
             <p>
               Don't miss out on exciting promotions and the latest shopping news
@@ -44,7 +41,7 @@
               placeholder="Enter your password"
               id="loginPassword"
             />
-            <button class="subsbtn1">Login</button>
+            <button class="subsbtn1" type="button">Login</button>
             <p>Don't have account? <span id="showSignup">Signup</span></p>
           </section>
         </form>
@@ -52,7 +49,10 @@
       <div class="wholesign">
         <form action="" class="subsign">
           <section class="loginstyle1">
-            <img src="./assest/Login Page.jpg" alt="" />
+            <span class="popupClose">&times;</span>
+            <div class="imgWrapper">
+              <img src="./assest/Login Page.jpg" alt="Signup" />
+            </div>
             <h2>SIGN UP NEWSLETTER</h2>
             <p>
               Don't miss out on exciting promotions and the latest shopping news
@@ -67,12 +67,14 @@
               id="signupPassword"
               placeholder="Enter your password"
             />
-            <button class="subsbtn">Signup</button>
+            <button class="subsbtn" type="button">Signup</button>
             <p>Already have account? <span id="showLogin">Login</span></p>
           </section>
         </form>
       </div>
     </div>
+
+    <!-- ===== DESKTOP NAVBAR ===== -->
     <nav class="wholenav">
       <div class="subnav">
         <section class="menus">
@@ -83,7 +85,7 @@
           <b>BLOG</b>
         </section>
         <section class="imag">
-          <img src="./assest/logo.png" alt="" />
+          <img src="./assest/logo.png" alt="BigBoom Logo" />
         </section>
         <section class="login">
           <b class="holo1">ENG</b>
@@ -93,20 +95,27 @@
         <section class="icons">
           <i class="ico1 ri-search-line"></i>
           <i class="ico2 ri-heart-line"></i>
-          <i class="shoplisticon ico3 ri-shopping-bag-3-line"></i>
+          <span class="cart-wrapper">
+            <i class="shoplisticon ico3 ri-shopping-bag-3-line"></i>
+            <span class="cart-badge" id="cartBadge">0</span>
+          </span>
         </section>
       </div>
     </nav>
+
+    <!-- ===== HERO ===== -->
     <div class="wholehome">
       <div class="subhome"></div>
     </div>
+
+    <!-- ===== CATEGORIES ===== -->
     <div class="wholeloca">
       <div class="subloca">
         <section class="locaimg">
           <img
             class="anima animate__shakeX"
             src="./assest/livingroom.png"
-            alt=""
+            alt="Living Room"
           />
           <p>LIVING ROOM</p>
         </section>
@@ -114,7 +123,7 @@
           <img
             class="anima animate__shakeX"
             src="./assest/interior.png"
-            alt=""
+            alt="Interior"
           />
           <p>INTERIOR</p>
         </section>
@@ -122,7 +131,7 @@
           <img
             class="anima animate__shakeX"
             src="./assest/kitchen.png"
-            alt=""
+            alt="Kitchen"
           />
           <p>KITCHEN</p>
         </section>
@@ -130,7 +139,7 @@
           <img
             class="anima animate__shakeX"
             src="./assest/bathroom.png"
-            alt=""
+            alt="Bathroom"
           />
           <p>BATHROOM</p>
         </section>
@@ -138,16 +147,22 @@
           <img
             class="anima animate__shakeX"
             src="./assest/lighting.png"
-            alt=""
+            alt="Lighting"
           />
           <p>LIGHTING</p>
         </section>
         <section class="locaimg">
-          <img class="anima animate__shakeX" src="./assest/office.png" alt="" />
+          <img
+            class="anima animate__shakeX"
+            src="./assest/office.png"
+            alt="Office"
+          />
           <p>OFFICE</p>
         </section>
       </div>
     </div>
+
+    <!-- ===== NEW ARRIVALS ===== -->
     <div class="wholearrival">
       <div class="subarrival">
         <section class="sec1">
@@ -159,7 +174,7 @@
         </section>
         <section class="sec2">
           <section class="decoimgs">
-            <img src="./assest/Img1.jpg" alt="" class="proimg" />
+            <img src="./assest/Img1.jpg" alt="Product 1" class="proimg" />
             <div class="overlay1">
               <section class="hoveicon">
                 <i class="carticon icocolor ri-shopping-cart-line"></i>
@@ -174,7 +189,7 @@
             </section>
           </section>
           <section class="decoimgs">
-            <img src="./assest/Img2.jpg" alt="" class="proimg" />
+            <img src="./assest/Img2.jpg" alt="Product 2" class="proimg" />
             <div class="overlay1">
               <section class="hoveicon">
                 <i class="carticon icocolor ri-shopping-cart-line"></i>
@@ -189,7 +204,7 @@
             </section>
           </section>
           <section class="decoimgs newdeco">
-            <img src="./assest/Img3.jpg" alt="" class="proimg" />
+            <img src="./assest/Img3.jpg" alt="Product 3" class="proimg" />
             <div class="overlay1">
               <section class="hoveicon">
                 <i class="carticon icocolor ri-shopping-cart-line"></i>
@@ -204,7 +219,7 @@
             </section>
           </section>
           <section class="decoimgs newdeco">
-            <img src="./assest/Img4.jpg" alt="" class="proimg" />
+            <img src="./assest/Img4.jpg" alt="Product 4" class="proimg" />
             <div class="overlay1">
               <section class="hoveicon">
                 <i class="carticon icocolor ri-shopping-cart-line"></i>
@@ -221,6 +236,8 @@
         </section>
       </div>
     </div>
+
+    <!-- ===== TOP POPULARS ===== -->
     <div class="toppop">
       <b>TOP POPULARS</b>
       <p>
@@ -232,7 +249,7 @@
       <div class="subpopu">
         <section class="popular1">
           <section class="decoimgs">
-            <img src="./assest/Img1.jpg" alt="" class="proimg" />
+            <img src="./assest/Img1.jpg" alt="Popular Product" class="proimg" />
             <div class="overlay2">
               <section class="hoveicon">
                 <i class="new icocolor ri-eye-line"></i>
@@ -248,10 +265,12 @@
           <button class="cartbutton carticon">ADD TO CART</button>
         </section>
         <section class="popular2">
-          <img class="chaimg" src="./assest/popimag.jpg" alt="" />
+          <img class="chaimg" src="./assest/popimag.jpg" alt="Popular" />
         </section>
       </div>
     </div>
+
+    <!-- ===== BESTSELLER ===== -->
     <div class="wholesell">
       <section class="seller">
         <b>BESTSELLER</b>
@@ -267,10 +286,12 @@
         <button class="sofabut">SOFA</button>
       </section>
     </div>
+
+    <!-- ===== DECOR PART 1 ===== -->
     <div class="decorpart1">
       <div class="subpart1">
         <section class="decoimgs cartmenu">
-          <img src="./assest/Img4.jpg" alt="" class="proimg" />
+          <img src="./assest/Img4.jpg" alt="Decor 1" class="proimg" />
           <div class="overlay">
             <section class="hoveicon icoicon">
               <i class="carticon icocolor ri-shopping-cart-line"></i>
@@ -285,7 +306,7 @@
           </section>
         </section>
         <section class="decoimgs addeco cartmenu">
-          <img src="./assest/blackclock.jpg" alt="" class="proimg" />
+          <img src="./assest/blackclock.jpg" alt="Decor 2" class="proimg" />
           <div class="overlay">
             <section class="hoveicon">
               <i class="carticon icocolor ri-shopping-cart-line"></i>
@@ -300,7 +321,7 @@
           </section>
         </section>
         <section class="decoimgs addeco">
-          <img src="./assest/tree1.jpg" alt="" class="proimg" />
+          <img src="./assest/tree1.jpg" alt="Decor 3" class="proimg" />
           <div class="overlay">
             <section class="hoveicon">
               <i class="carticon icocolor ri-shopping-cart-line"></i>
@@ -315,7 +336,7 @@
           </section>
         </section>
         <section class="decoimgs addeco">
-          <img src="./assest/stand.jpg" alt="" class="proimg" />
+          <img src="./assest/stand.jpg" alt="Decor 4" class="proimg" />
           <div class="overlay">
             <section class="hoveicon">
               <i class="carticon icocolor ri-shopping-cart-line"></i>
@@ -331,12 +352,15 @@
         </section>
       </div>
     </div>
+
     <div class="overlaycart"></div>
     <div class="cartoverlay"></div>
+
+    <!-- ===== DECOR PART 2 ===== -->
     <div class="decorpart2">
       <div class="subpart2">
         <section class="decoimgs">
-          <img src="./assest/whiteclock.jpg" alt="" class="proimg" />
+          <img src="./assest/whiteclock.jpg" alt="Decor 5" class="proimg" />
           <div class="overlay">
             <section class="hoveicon">
               <i class="carticon icocolor ri-shopping-cart-line"></i>
@@ -351,7 +375,7 @@
           </section>
         </section>
         <section class="decoimgs addeco">
-          <img src="./assest/stell.jpg" alt="" class="proimg" />
+          <img src="./assest/stell.jpg" alt="Decor 6" class="proimg" />
           <div class="overlay">
             <section class="hoveicon">
               <i class="carticon icocolor ri-shopping-cart-line"></i>
@@ -366,7 +390,7 @@
           </section>
         </section>
         <section class="decoimgs addeco">
-          <img src="./assest/tree2.jpg" alt="" class="proimg" />
+          <img src="./assest/tree2.jpg" alt="Decor 7" class="proimg" />
           <div class="overlay">
             <section class="hoveicon">
               <i class="carticon icocolor ri-shopping-cart-line"></i>
@@ -381,7 +405,7 @@
           </section>
         </section>
         <section class="decoimgs addeco">
-          <img src="./assest/jar.jpg" alt="" class="proimg" />
+          <img src="./assest/jar.jpg" alt="Decor 8" class="proimg" />
           <div class="overlay">
             <section class="hoveicon">
               <i class="carticon icocolor ri-shopping-cart-line"></i>
@@ -397,33 +421,39 @@
         </section>
       </div>
     </div>
+
+    <!-- ===== BOTTOM DESIGN ===== -->
     <div class="wbomdes">
       <div class="sbomdes">
-        <img src="./assest/bomdesign.jpg" alt="" />
+        <img src="./assest/bomdesign.jpg" alt="Design Banner" />
       </div>
     </div>
+
+    <!-- ===== MENU LIST ===== -->
     <div class="wholelistmenu">
       <div class="sublistmenu">
         <section class="menusimag">
-          <img src="./assest/menu1.png" alt="" />
+          <img src="./assest/menu1.png" alt="Menu 1" />
         </section>
         <section class="menusimag">
-          <img src="./assest/menu2.png" alt="" />
+          <img src="./assest/menu2.png" alt="Menu 2" />
         </section>
         <section class="menusimag addmenu1">
-          <img src="./assest/menu3.png" alt="" />
+          <img src="./assest/menu3.png" alt="Menu 3" />
         </section>
         <section class="menusimag addmenu1">
-          <img src="./assest/menu4.png" alt="" />
+          <img src="./assest/menu4.png" alt="Menu 4" />
         </section>
         <section class="menusimag addmenu1">
-          <img src="./assest/menu5.png" alt="" />
+          <img src="./assest/menu5.png" alt="Menu 5" />
         </section>
         <section class="menusimag addmenu1">
-          <img src="./assest/menu6.png" alt="" />
+          <img src="./assest/menu6.png" alt="Menu 6" />
         </section>
       </div>
     </div>
+
+    <!-- ===== STORE CONTACT ===== -->
     <div class="bgimag">
       <div class="customerdet">
         <div class="subdet">
@@ -448,35 +478,40 @@
         </div>
       </div>
     </div>
+
+    <!-- ===== FEATURES ===== -->
     <div class="wholeicon">
       <div class="subicon">
         <section class="iconshop">
-          <img src="./assest/icon1.png" alt="" />
+          <img src="./assest/icon1.png" alt="Free Shipping" />
           <h6>FREE SHIPPING</h6>
           <p>Sed ut perspiciatis unde omnis iste natus</p>
           <p>error sit voluptatem accusantium</p>
         </section>
         <section class="iconshop">
-          <img src="./assest/icon2.png" alt="" />
+          <img src="./assest/icon2.png" alt="Money Back" />
           <h6>30 DAYS MONEY BACK</h6>
           <p>Sed ut perspiciatis unde omnis iste natus</p>
           <p>error sit voluptatem accusantium</p>
         </section>
         <section class="iconshop">
-          <img src="./assest/icon3.png" alt="" />
+          <img src="./assest/icon3.png" alt="Help Center" />
           <h6>24/7 HELP CENTER</h6>
           <p>Sed ut perspiciatis unde omnis iste natus</p>
           <p>error sit voluptatem accusantium</p>
         </section>
         <section class="iconshop">
-          <img src="./assest/icon4.png" alt="" />
+          <img src="./assest/icon4.png" alt="Gift" />
           <h6>GIFT PROMOTION</h6>
           <p>Sed ut perspiciatis unde omnis iste natus</p>
           <p>error sit voluptatem accusantium</p>
         </section>
       </div>
     </div>
+
     <hr />
+
+    <!-- ===== FOOTER ===== -->
     <footer class="wholefoot">
       <div class="subfoot">
         <section class="secfoot">
@@ -507,14 +542,12 @@
           <p>COOKIE POLICY</p>
         </section>
         <section class="secfoot addsec">
-          <h3>SIGN UP FOR NEWSELLER</h3>
+          <h3>SIGN UP FOR NEWSLETTER</h3>
           <p class="ptag">
             Don't miss out on exciting promotions and the latest shopping news
           </p>
-          <input type="email" placeholder=" Your email address..." />
-          <span>
-            <button>SUBSCRIBE</button>
-          </span>
+          <input type="email" placeholder="Your email address..." />
+          <span><button type="button">SUBSCRIBE</button></span>
           <section class="menuicon">
             <i class="ri-facebook-fill"></i>
             <i class="ri-twitter-line"></i>
@@ -526,13 +559,17 @@
         </section>
       </div>
     </footer>
+
     <hr />
+
     <div class="com">
       <p>
-        Copyright © 2022. Designed by <span> SmartAddons.Com</span>. All Rights
+        Copyright © 2022. Designed by <span>SmartAddons.Com</span>. All Rights
         Reserved.
       </p>
     </div>
+
+    <!-- ===== DESKTOP FLOATING ICON BAR ===== -->
     <div class="wholeeasyicon">
       <div class="subeasyicon">
         <a class="easylisticon">
@@ -557,7 +594,107 @@
         </a>
       </div>
     </div>
+
+    <!-- ===== MOBILE BOTTOM NAVIGATION ===== -->
+    <nav class="mobilenav">
+      <div class="mobilenav-inner">
+        <div class="mobilenav-item active">
+          <i class="ri-home-line"></i>
+          <span>Home</span>
+        </div>
+        <div class="mobilenav-item">
+          <i class="ri-menu-line"></i>
+          <span>Categories</span>
+        </div>
+        <div class="mobilenav-item shoplisticon">
+          <span class="cart-wrapper">
+            <i class="ri-shopping-bag-3-line"></i>
+            <span class="cart-badge" id="cartBadgeMobile">0</span>
+          </span>
+          <span>Cart</span>
+        </div>
+        <div class="mobilenav-item">
+          <i class="ri-search-line"></i>
+          <span>Search</span>
+        </div>
+        <div class="mobilenav-item holo3">
+          <i class="ri-user-line"></i>
+          <span>Account</span>
+        </div>
+      </div>
+    </nav>
+
     <script type="module" src="./script.js"></script>
     <script src="cartscript.js"></script>
+
+    <script>
+      function lockScroll() {
+        document.body.classList.add("popup-open");
+      }
+      function unlockScroll() {
+        document.body.classList.remove("popup-open");
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var popupSign = document.querySelector(".popupSign");
+        var popupClose = document.querySelectorAll(".popupClose");
+        var showSignup = document.getElementById("showSignup");
+        var showLogin = document.getElementById("showLogin");
+        var wholelogin = document.querySelector(".wholelogin");
+        var wholesign = document.querySelector(".wholesign");
+        var overlaycart = document.querySelector(".overlaycart");
+
+        if (popupSign && getComputedStyle(popupSign).display !== "none") {
+          lockScroll();
+        }
+
+        popupClose.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            if (popupSign) popupSign.style.display = "none";
+            unlockScroll();
+          });
+        });
+
+        if (showSignup) {
+          showSignup.addEventListener("click", function () {
+            if (wholelogin) wholelogin.style.display = "none";
+            if (wholesign) {
+              wholesign.style.display = "flex";
+            }
+          });
+        }
+
+        if (showLogin) {
+          showLogin.addEventListener("click", function () {
+            if (wholesign) wholesign.style.display = "none";
+            if (wholelogin) {
+              wholelogin.style.display = "flex";
+            }
+          });
+        }
+
+        if (overlaycart) {
+          overlaycart.addEventListener("click", function (e) {
+            if (e.target === overlaycart) {
+              overlaycart.classList.remove("show");
+              unlockScroll();
+            }
+          });
+        }
+
+        window.openCartOverlay = function () {
+          if (overlaycart) {
+            overlaycart.classList.add("show");
+            lockScroll();
+          }
+        };
+        window.closeCartOverlay = function () {
+          if (overlaycart) {
+            overlaycart.classList.remove("show");
+            unlockScroll();
+          }
+        };
+      });
+    </script>
   </body>
 </html>

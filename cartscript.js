@@ -1,6 +1,24 @@
 let carticon = document.querySelectorAll(".carticon");
 let productarray = [];
 
+// ===== CART BADGE UPDATE =====
+function updateCartBadge() {
+  const totalItems = productarray.reduce(
+    (sum, item) => sum + (item.quantity || 1),
+    0
+  );
+
+  const badge = document.getElementById("cartBadge");
+  const badgeMobile = document.getElementById("cartBadgeMobile");
+
+  if (badge) badge.textContent = totalItems;
+  if (badgeMobile) badgeMobile.textContent = totalItems;
+}
+
+// Page load-ல் badge 0 show ஆகணும்
+document.addEventListener("DOMContentLoaded", updateCartBadge);
+
+// ===== ADD TO CART =====
 carticon.forEach(function (add) {
   add.addEventListener("click", function () {
     const parent = this.closest(".decoimgs");
@@ -21,6 +39,7 @@ carticon.forEach(function (add) {
       });
     }
 
+    updateCartBadge(); // badge update
     showAddedOverlay(proname);
   });
 });
@@ -35,79 +54,70 @@ function showAddedOverlay(productName) {
     currentproduct.image,
     currentproduct.name,
     currentproduct.price,
-    currentproduct.quantity,
+    currentproduct.quantity
   );
 
+  // Close button
   overlaycart.querySelector(".closeicon").addEventListener("click", () => {
     overlaycart.classList.remove("show");
+    if (typeof unlockScroll === "function") unlockScroll();
   });
+
+  // Continue Shopping button
+  overlaycart.querySelector(".cartbtn2").addEventListener("click", () => {
+    overlaycart.classList.remove("show");
+    if (typeof unlockScroll === "function") unlockScroll();
+  });
+
+  // View Cart button — opens sidebar
+  overlaycart.querySelector(".cartbtn3").addEventListener("click", () => {
+    overlaycart.classList.remove("show");
+    renderCart();
+  });
+
+  if (typeof lockScroll === "function") lockScroll();
 }
 
 function cartdesign(image, name, price, quantity) {
-  let total = quantity * Number(price.replace(/[^0-9.]/g, ""));
+  let numericPrice = Number(price.replace(/[^0-9.]/g, ""));
+  let total = (quantity * numericPrice).toFixed(2);
 
   return `
-  <form class="cartform">
-    <section class="carted">
-      <p>Added to cart successfully</p>
-      <span><i class="closeicon ri-close-fill"></i></span>
-    </section>
-
-    <div class="wholecheck">
-      <div class="subdetails">
-        <img src="${image}" />
-        <div class="subcart">
-          <p class="proname">${name}</p>
-          <span class="proprice">${quantity} × ${price}</span>
-        </div>
-      </div>
-
-      <div class="cartcheck">
-        <p>Subtotal: $${total}</p>
-        <button class="cartbtn3">VIEW CART</button>
-      </div>
-    </div>
-  </form>`;
-}
-
-function cartdesign(image, name, price, quantity) {
-  let total = quantity * Number(price.replace(/[^0-9.]/g, ""));
-
-  return ` 
-    <form class="cartform">
+    <div class="cartform">
       <section class="carted">
         <p>Added to cart successfully. What is next?</p>
         <span><i class="closeicon ri-close-fill"></i></span>
       </section>
 
-      <div class="wholecheck">
-        <div class="cartdetails">
-          <div class="subdetails">
-            <img src="${image}" class="decoimgs"/>
-            <div class="subcart">
-              <p class="proname">${name}</p>
-              <span class="proprice">${quantity} × ${price}</span>
-            </div>
+      <div class="cartform-body">
+        <div class="cartform-left">
+          <img src="${image}" class="cartform-img" />
+          <div class="cartform-info">
+            <p class="cartform-name">${name}</p>
+            <span class="cartform-price">${quantity} &times; <strong>${price.startsWith("$") ? price : "$" + price}</strong></span>
           </div>
         </div>
 
         <div class="cartcheck">
           <button type="button" class="cartbtn1">CHECKOUT</button>
           <p class="order">Order subtotal</p>
-          <p class="rate">$${total}.00</p>
-          <p class="order">Your cart contains ${quantity} items</p>
-          <button class="cartbtn2">CONTINUE SHOPPING</button>
-          <button class="cartbtn3">VIEW CART</button>
+          <p class="rate">$${total}</p>
+          <p class="order">Your cart contains ${quantity} item${quantity > 1 ? "s" : ""}</p>
+          <button type="button" class="cartbtn2">CONTINUE SHOPPING</button>
+          <button type="button" class="cartbtn3">VIEW CART</button>
         </div>
       </div>
-    </form>
+    </div>
   `;
 }
 
-const shoplisticon = document.querySelector(".shoplisticon");
+// ===== CART SIDEBAR =====
+const shoplisticons = document.querySelectorAll(".shoplisticon");
 
-shoplisticon.addEventListener("click", function () {
-  renderCart();
+shoplisticons.forEach(function (icon) {
+  icon.addEventListener("click", function () {
+    renderCart();
+  });
 });
 
 function renderCart() {
@@ -116,21 +126,54 @@ function renderCart() {
 
   cartoverlay.innerHTML = wholecart();
 
+  if (typeof lockScroll === "function") lockScroll();
+
   cartoverlay.querySelector(".closecartbtn").addEventListener("click", () => {
     cartoverlay.classList.remove("show1");
+    if (typeof unlockScroll === "function") unlockScroll();
+  });
+
+  // Close when clicking dark backdrop
+  cartoverlay.addEventListener("click", function (e) {
+    if (e.target === cartoverlay) {
+      cartoverlay.classList.remove("show1");
+      if (typeof unlockScroll === "function") unlockScroll();
+    }
   });
 
   cartoverlay.querySelectorAll(".deleteicon").forEach((btn) => {
     btn.addEventListener("click", function () {
       const name = this.dataset.name;
-
       let item = productarray.find((p) => p.name === name);
 
       if (item.quantity > 1) {
         item.quantity -= 1;
       } else {
-        productarray = productarray.filter((p) => p.name !== name); // 🔥 remove fully
+        productarray = productarray.filter((p) => p.name !== name);
       }
+
+      updateCartBadge(); // badge update
+      renderCart();
+    });
+  });
+
+  cartoverlay.querySelectorAll(".qtybtn").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const name = this.dataset.name;
+      const action = this.dataset.action;
+      let item = productarray.find((p) => p.name === name);
+
+      if (action === "inc") {
+        item.quantity += 1;
+      } else if (action === "dec") {
+        if (item.quantity > 1) {
+          item.quantity -= 1;
+        } else {
+          productarray = productarray.filter((p) => p.name !== name);
+        }
+      }
+
+      updateCartBadge(); // badge update
       renderCart();
     });
   });
@@ -139,10 +182,15 @@ function renderCart() {
     input.addEventListener("change", function () {
       const name =
         this.closest(".cartimg").querySelector(".cartname").innerText;
-
       let item = productarray.find((p) => p.name === name);
-      item.quantity = Number(this.value);
+      let val = parseInt(this.value);
+      if (val > 0) {
+        item.quantity = val;
+      } else {
+        productarray = productarray.filter((p) => p.name !== name);
+      }
 
+      updateCartBadge(); // badge update
       renderCart();
     });
   });
@@ -157,9 +205,12 @@ function wholecart() {
         <section class="cartdetails">
           <p class="cartname">${item.name}</p>
           <p class="cartprice">${item.price}</p>
-          <label>QTY:
+          <div class="cartquality">
+            <span class="qty-label">QTY:</span>
+            <button class="qtybtn" data-name="${item.name}" data-action="dec">−</button>
             <input type="text" value="${item.quantity}" class="qualitybox" />
-          </label>
+            <button class="qtybtn" data-name="${item.name}" data-action="inc">+</button>
+          </div>
         </section>
         <section class="deletebutton">
           <button class="deleteicon" data-name="${item.name}">
@@ -185,13 +236,13 @@ function wholecart() {
       </div>
 
       <div class="selectcart">
-        ${itemsHTML || "<p>Your cart is empty!</p>"}
+        ${itemsHTML || '<p style="padding:20px; color:#999; text-align:center;">Your cart is empty!</p>'}
       </div>
 
       <div class="wholetotal">
         <div class="subtotal">
           <strong>TOTAL</strong>
-          <strong>$${total}.00</strong>
+          <strong>$${total.toFixed(2)}</strong>
         </div>
         <div class="cartbtn">
           <button class="viewbtn">VIEW CART</button>
